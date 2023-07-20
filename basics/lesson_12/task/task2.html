@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        function pow(x, y) {
+            let result = x;
+
+            for (let i = 1; i < y; i++) {
+                result *= x;
+            }
+            return result;
+        }
+
+        let x = prompt("Enter x: ", ``);
+        let y = prompt("Enter y: ", ``);
+
+        if (y < 1) {
+            alert("Cant do pow func");
+        } else {
+            alert(pow(x, y));
+        }
+
+    </script>
+</body>
+
+</html>
