@@ -20,10 +20,10 @@ The function is called for elements of the array, one after another:
 */
 
 let users = [
-    { id: 1, name: "John" },
-    { id: 2, name: "Pete" },
-    { id: 3, name: "Mary" },
-    { id: 4, name: "John" }
+  { id: 1, name: "John" },
+  { id: 2, name: "Pete" },
+  { id: 3, name: "Mary" },
+  { id: 4, name: "John" }
 ];
 
 let user = users.find(item => item.id == 1);
@@ -50,13 +50,13 @@ let results = arr.filter(function(item, index, array) {
 */
 
 let someUsers = [
-    { id: 0, name: `John` },
-    { id: 1, name: `Pete` },
-    { id: 2, name: `Mary` },
-    { id: 3, name: `Joe`}
+  { id: 0, name: `John` },
+  { id: 1, name: `Pete` },
+  { id: 2, name: `Mary` },
+  { id: 3, name: `Joe` }
 ];
 
-let filteredArray = someUsers.filter( x => x.id<2);
+let filteredArray = someUsers.filter(x => x.id < 2);
 
 alert(filteredArray.length);
 
@@ -67,3 +67,60 @@ The call to arr.sort() sorts the array in place, changing its element order.
 
 It also returns the sorted array, but the returned value is usually ignored, as arr itself is modified.
 */
+
+
+function compare(a, b) {
+
+  if (a > b) return 1;
+  if (a == b) return 0;
+  if (a < b) return -1;
+}
+
+let arrayOfNums = [14, 2, 55, 33];
+
+alert(`Array at start: ${arrayOfNums}`);
+
+let sortedArray = arrayOfNums.sort(compare);
+
+alert(`Sorted: ${sortedArray}`);
+
+/* 
+Sample:
+let arr = [ 1, 2, 15 ];
+
+arr.sort(function(a, b) { return a - b; });
+
+alert(arr);  // 1, 2, 15;
+
+or with arrow function:
+
+arr.sort( (a, b) => a - b );
+*/
+
+/*
+  FOR STRINGS USE -localeCompare- :
+
+  let countries = ['Österreich', 'Andorra', 'Vietnam'];
+
+alert( countries.sort( (a, b) => a > b ? 1 : -1) ); // Andorra, Vietnam, Österreich (wrong)
+
+alert( countries.sort( (a, b) => a.localeCompare(b) ) ); // Andorra,Österreich,Vietnam (correct!)
+*/
+
+//Split and Join:
+
+let names = `Tom, Sam, Jack, Jenn, Kate, Anna`;
+
+let nameArray = names.split(`, `);
+
+for(x of nameArray){
+  alert(`Name in array: ${x}`);
+}
+
+// reduce/reduceRight
+
+let reduceArray = [1,2,3,4,5];
+
+let resultOfReduce = reduceArray.reduce((sum,current) => sum+current,0);
+
+alert(resultOfReduce);
